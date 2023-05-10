@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		52D14F122A0A44C300C86569 /* CommandTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D14F112A0A44C300C86569 /* CommandTool.swift */; };
+		52D14F142A0B42F000C86569 /* PowerPlistTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D14F132A0B42F000C86569 /* PowerPlistTool.swift */; };
+		52D14F162A0B706D00C86569 /* RepeatItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D14F152A0B706D00C86569 /* RepeatItem.swift */; };
+		52D14F182A0B70BB00C86569 /* AutoWakePlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D14F172A0B70BB00C86569 /* AutoWakePlist.swift */; };
 		52E61E3B2A08E07B0009738C /* PowerScheduleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E61E3A2A08E07B0009738C /* PowerScheduleApp.swift */; };
 		52E61E3D2A08E07B0009738C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E61E3C2A08E07B0009738C /* ContentView.swift */; };
 		52E61E3F2A08E07C0009738C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52E61E3E2A08E07C0009738C /* Assets.xcassets */; };
@@ -19,6 +22,9 @@
 
 /* Begin PBXFileReference section */
 		52D14F112A0A44C300C86569 /* CommandTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandTool.swift; sourceTree = "<group>"; };
+		52D14F132A0B42F000C86569 /* PowerPlistTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerPlistTool.swift; sourceTree = "<group>"; };
+		52D14F152A0B706D00C86569 /* RepeatItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatItem.swift; sourceTree = "<group>"; };
+		52D14F172A0B70BB00C86569 /* AutoWakePlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoWakePlist.swift; sourceTree = "<group>"; };
 		52E61E372A08E07B0009738C /* PowerSchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PowerSchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52E61E3A2A08E07B0009738C /* PowerScheduleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerScheduleApp.swift; sourceTree = "<group>"; };
 		52E61E3C2A08E07B0009738C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -45,6 +51,7 @@
 			isa = PBXGroup;
 			children = (
 				52D14F112A0A44C300C86569 /* CommandTool.swift */,
+				52D14F132A0B42F000C86569 /* PowerPlistTool.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -109,6 +116,8 @@
 			children = (
 				52FF8FB32A09F692005EDFBC /* WeekCycle.swift */,
 				52FF8FB52A0A1624005EDFBC /* PowerEventType.swift */,
+				52D14F152A0B706D00C86569 /* RepeatItem.swift */,
+				52D14F172A0B70BB00C86569 /* AutoWakePlist.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -183,8 +192,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52D14F182A0B70BB00C86569 /* AutoWakePlist.swift in Sources */,
 				52E61E3D2A08E07B0009738C /* ContentView.swift in Sources */,
 				52D14F122A0A44C300C86569 /* CommandTool.swift in Sources */,
+				52D14F142A0B42F000C86569 /* PowerPlistTool.swift in Sources */,
+				52D14F162A0B706D00C86569 /* RepeatItem.swift in Sources */,
 				52E61E3B2A08E07B0009738C /* PowerScheduleApp.swift in Sources */,
 				52FF8FB42A09F692005EDFBC /* WeekCycle.swift in Sources */,
 				52FF8FB62A0A1624005EDFBC /* PowerEventType.swift in Sources */,

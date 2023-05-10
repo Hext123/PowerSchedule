@@ -20,10 +20,17 @@ struct ContentView: View {
             RepeatItemView(repeatItem: $repeatPowerOn)
             RepeatItemView(repeatItem: $repeatPowerOff)
 
-            Button {
-                saveRepeat()
-            } label: {
-                Label("保存", systemImage: "archivebox")
+            HStack {
+                Button {
+                    getPlanned()
+                } label: {
+                    Label("恢复上次的设置", systemImage: "arrow.triangle.2.circlepath")
+                }
+                Button {
+                    saveRepeat()
+                } label: {
+                    Label("应用", systemImage: "archivebox")
+                }
             }
 
             Divider()
@@ -31,7 +38,7 @@ struct ContentView: View {
             HStack {
                 Text("已设定计划")
                 Button {
-                    getPlanned()
+                    getPlanned(updateUI: false)
                 } label: {
                     Label("刷新", systemImage: "arrow.triangle.2.circlepath")
                 }
@@ -44,8 +51,33 @@ struct ContentView: View {
         }
     }
 
-    func getPlanned() {
+    func getPlanned(updateUI: Bool = true) {
         planned = CommandTool.getPlanned()
+        if updateUI {
+            readPlistUpdateUI()
+        }
+    }
+
+    func readPlistUpdateUI() {
+        let autoWakePlist = PowerPlistTool.readPlist()
+        // RepeatingPowerOn
+        if let repeatingPowerOn = autoWakePlist?.RepeatingPowerOn {
+            repeatPowerOn.enable = true
+            repeatPowerOn.type = repeatingPowerOn.type
+            repeatPowerOn.time = repeatingPowerOn.datetime
+            repeatPowerOn.weekdays = repeatingPowerOn.weekdaysCode
+        } else {
+            repeatPowerOn.enable = false
+        }
+        // RepeatingPowerOff
+        if let repeatingPowerOff = autoWakePlist?.RepeatingPowerOff {
+            repeatPowerOff.enable = true
+            repeatPowerOff.type = repeatingPowerOff.type
+            repeatPowerOff.time = repeatingPowerOff.datetime
+            repeatPowerOff.weekdays = repeatingPowerOff.weekdaysCode
+        } else {
+            repeatPowerOff.enable = false
+        }
     }
 
     func saveRepeat() {
